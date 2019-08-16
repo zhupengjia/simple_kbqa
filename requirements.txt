@@ -1,0 +1,7 @@
+tqdm
+numpy
+scipy
+spacy
+python-lzo
+git+git@github.com:zhupengjia/KnowledgeGraphEmbedding.git
+git+git@github.com:zhupengjia/nlptools.git
