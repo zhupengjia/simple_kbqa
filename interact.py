@@ -6,8 +6,6 @@ parser.add_argument('-p', '--port', dest='port', default=5003, help="listen port
 parser.add_argument('--backend', dest='backend', default='shell', help="choose for backend from: shell, restful, default is shell")
 parser.add_argument('--scorelimit', dest='scorelimit', default=0.4, help="Limitation of score, if below this number will return None")
 parser.add_argument('embedding_file', help="Pretrained KB Embedding file")
-parser.add_argument('--w2v_word2idx', required=True, help="Word embedding word-idx mapping file")
-parser.add_argument('--w2v_idx2vec', required=True, help="Word embedding idx-vec mapping file")
 args = parser.parse_args()
 
 #from simple_kbqa.backend import Backend
