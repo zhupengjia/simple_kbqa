@@ -36,9 +36,10 @@ class Restful:
         session_id = request.form.get('sessionId', "123456")
 
         response, score = self.session(query, session_id=session_id)
+        print(response, score)
         if response is None:
             return Response(json.dumps({"code":0, "message":"200 OK", 'sessionId':session_id, "data":{"response": None, "score":0}}), mimetype='application/json')
-        return Response(json.dumps({"code":0, "message":"200 OK", 'sessionId':session_id, "data":{"response": response, "score":score}}), mimetype='application/json')
+        return Response(json.dumps({"code":0, "message":"200 OK", 'sessionId':session_id, "data":{"response": response, "score":float(score)}}), mimetype='application/json')
 
     def run(self):
         self.app.run(host='0.0.0.0', port=self.port, threaded=True)

@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import os, re, spacy, numpy, torch, ipdb
+import os, re, spacy, numpy, torch
 from bidict import bidict
 from sklearn.metrics.pairwise import cosine_distances
 from nlptools.text.tokenizer import Tokenizer_BERT
@@ -11,32 +11,34 @@ class GraphSearch:
     """
         Graph search via graph embedding
     """
-    def __init__(self, checkpoint, w2v_word2idx, w2v_idx2vec, score_tolerate=0.05, **args):
+    def __init__(self, checkpoint, w2v_word2idx, w2v_idx2vec, score_tolerate=0.05, min_score=0.4, min_sim=0.7, **args):
         """
             Input:
                 - checkpoint: 
                 - w2v_word2idx: pickle dump for word-idx mapping
                 - w2v_idx2vec: hdf5 dump for idx-vector mapping
                 - score_tolerate: float, will return all results in score tolerate range, default is 0.05
+                - min_score: minimum score for related query
+                - min_sim: minimum similarity to get synonym from word embedding
         """
-        checkpoint = torch.load(checkpoint)
+        pi = 3.14159265358979323846
+        checkpoint = torch.load(checkpoint, map_location={"cuda:0":"cpu"})
+        embedding_range = checkpoint["model_state_dict"]["embedding_range"].item()
         self.graph_embedding = {
-            "node": checkpoint["model_state_dict"]["entity_embedding"].to("cpu").numpy(),
-            "relation": checkpoint["model_state_dict"]["relation_embedding"].to("cpu").numpy()
+            "node": checkpoint["model_state_dict"]["entity_embedding"].numpy(),
+            "relation": checkpoint["model_state_dict"]["relation_embedding"].numpy()/(embedding_range/pi)
         }
         self.id_map = {
             "node": bidict(checkpoint["entity2id"]),
             "relation": bidict(checkpoint["relation2id"])
         }
-        self.embedding_dim = {
-            "node": self.graph_embedding["node"].shape[1]//2,
-            "relation": self.graph_embedding["relation"].shape[1]//2
-        }
-        self.embedding_range = checkpoint["model_state_dict"]["embedding_range"].item()
+        self.embedding_dim = self.graph_embedding["node"].shape[1]//2
         self.tokenizer = Tokenizer_BERT(bert_model_name="bert-base-uncased", do_lower_case=True)
         self.vocab = self.tokenizer.vocab
         self.vocab.embedding = Embedding_File(w2v_word2idx, w2v_idx2vec)
         self.score_tolerate = score_tolerate
+        self.min_score = min_score
+        self.min_sim = min_sim
         self._build_index()
 
     def _build_index(self):
@@ -67,7 +69,12 @@ class GraphSearch:
         else:
             ids = list(range(len(self.word_ids[idtype])))
         distances = [self.similarity.rwmd_distance(name_ids, self.word_ids[idtype][i]) for i in ids]
-        return ids[numpy.argmin(distances)]
+        min_id = numpy.argmin(distances)
+        min_dis = distances[min_id]
+        max_sim = 1/(1+min_dis)
+        if max_sim <= self.min_sim :
+            return None
+        return ids[min_id]
 
     def _get_close(self, embedding, idtype="node"):
         """
@@ -77,7 +84,9 @@ class GraphSearch:
         similarities = 1/(1+distances)
         ids = numpy.arange(len(similarities))
         max_sim = similarities.max()
-        sim_filter = similarities >= max_sim-self.score_tolerate
+        if max_sim < self.min_score:
+            return None
+        sim_filter = similarities >= max(self.min_score, max_sim-self.score_tolerate)
         ids = ids[sim_filter]
         similarities = similarities[sim_filter]
         ids2 = numpy.argsort(ids)[::-1]
@@ -95,18 +104,18 @@ class GraphSearch:
                 - node2: string
                 - relation: string
         """
-        pi = 3.14159265358979323846
 
         if node1 and relation:
             # get node2 from node1 and relationship
             node1_id = self.get_id(node1, "node")
             relation_id = self.get_id(relation, "relation")
+            if node1_id is None or relation_id is None:
+                return None
             node1_embedding = self.graph_embedding['node'][node1_id]
-            relation_embedding = self.graph_embedding['relation'][relation_id]
+            phase_relation = self.graph_embedding['relation'][relation_id]
 
-            re_node1 = node1_embedding[:self.embedding_dim["node"]]
-            im_node1 = node1_embedding[self.embedding_dim["node"]:]
-            phase_relation = relation_embedding/(self.embedding_range/pi)
+            re_node1 = node1_embedding[:self.embedding_dim]
+            im_node1 = node1_embedding[self.embedding_dim:]
             re_relation = numpy.cos(phase_relation)
             im_relation = numpy.sin(phase_relation)
 
@@ -119,12 +128,13 @@ class GraphSearch:
             # get node1 from node2 and relationship
             node2_id = self.get_id(node2, "node")
             relation_id = self.get_id(relation, "relation")
+            if node2_id is None or relation_id is None:
+                return None
             node2_embedding = self.graph_embedding['node'][node2_id]
-            relation_embedding = self.graph_embedding['relation'][relation_id]
+            phase_relation = self.graph_embedding['relation'][relation_id]
 
-            re_node2 = node2_embedding[:self.embedding_dim["node"]]
-            im_node2 = node2_embedding[self.embedding_dim["node"]:]
-            phase_relation = relation_embedding/(self.embedding_range/pi)
+            re_node2 = node2_embedding[:self.embedding_dim]
+            im_node2 = node2_embedding[self.embedding_dim:]
             re_relation = numpy.cos(phase_relation)
             im_relation = numpy.sin(phase_relation)
            
@@ -137,19 +147,20 @@ class GraphSearch:
             # get relationship between two nodes
             node1_id = self.get_id(node1, "node")
             node2_id = self.get_id(node2, "node")
+            if node1_id is None or node2_id is None:
+                return None
             node1_embedding = self.graph_embedding['node'][node1_id]
             node2_embedding = self.graph_embedding['node'][node2_id]
 
-            re_node1 = node1_embedding[:self.embedding_dim["node"]]
-            im_node1 = node1_embedding[self.embedding_dim["node"]:]
-            re_node2 = node2_embedding[:self.embedding_dim["node"]]
-            im_node2 = node2_embedding[self.embedding_dim["node"]:]
+            re_node1 = node1_embedding[:self.embedding_dim]
+            im_node1 = node1_embedding[self.embedding_dim:]
+            re_node2 = node2_embedding[:self.embedding_dim]
+            im_node2 = node2_embedding[self.embedding_dim:]
             
             re_relation = re_node1 * re_node2 + im_node1 * im_node2
             im_relation = im_node2 * re_node1 - re_node2 * im_node1
 
-            relation_embedding = numpy.arctan(im_relation/re_relation) * (self.embedding_range/pi)
-            ipdb.set_trace()
+            relation_embedding = numpy.arctan2(im_relation, re_relation)
             return self._get_close(relation_embedding, "relation")
 
         else:

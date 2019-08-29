@@ -1,0 +1,353 @@
+elsa, family name, greyrat
+elsa, sister, norinne
+elsa, father, paul
+elsa, brother, rudeus
+elsa, mother, lilia
+elsa, mother in law, jennis
+elsa, husband, ars
+elsa, uncle, philemon
+elsa, sex, female
+elsa, race, human
+elsa, profession, counselor
+elsa, organization, ludo mercenary
+elsa, daughter, ferris
+elsa, country, kingdom of asura
+elsa, birth place, fitia
+norinne, husband, ruijerudo
+norinne, father, paul
+norinne, family name, greyrat
+norinne, mother, jennis
+norinne, brother, rudeus
+norinne, sister, elsa
+norinne, daughter, ruisheria
+norinne, mother in law, lilia
+norinne, grandfather, carlyle
+norinne, grandmother, claire
+norinne, great uncle, sauros
+norinne, uncle, edgar
+norinne, uncle, pyremon
+norinne, uncle, philip
+norinne, aunt, therese
+norinne, cousin, luke
+norinne, sex, female
+norinne, race, human
+norinne, school, ranoa magic university
+norinne, profession, author
+norinne, country, kingdom of asura
+norinne, birth place, fitia
+rudeus, family name, greyrat
+rudeus, wife, sylvie
+rudeus, wife, alice
+rudeus, wife, roxie
+rudeus, daughter, lucy
+rudeus, daughter, christina
+rudeus, daughter, lara
+rudeus, daughter, lili
+rudeus, son, ars
+rudeus, son, sieg
+rudeus, grandson, ferris
+rudeus, father, paul
+rudeus, mother, jennis
+rudeus, mother in law, lilia
+rudeus, sister, norninne
+rudeus, sister, elsa
+rudeus, grandfather, carlyle
+rudeus, grandmother, claire
+rudeus, great grandfather, rarukan
+rudeus, great grandmother, merdi
+rudeus, great uncle, sauros
+rudeus, uncle, edgar
+rudeus, uncle, philemon
+rudeus, uncle, philip
+rudeus, uncle, james
+rudeus, aunt, anis
+rudeus, aunt, therese
+rudeus, cousin, luke
+rudeus, race, human
+rudeus, sex, male
+rudeus, profession, magician
+rudeus, school, ranoa magic university
+rudeus, organization, olsted inc.
+rudeus, boss, olsted
+rudeus, country, kingdom of asura
+rudeus, birth place, fitia
+alice, husband, rudeus
+alice, family name, greyrat
+alice, wife companion, roxie
+alice, wife companion, sylvie
+alice, son, ars
+alice, daughter, christina
+alice, father, philip
+alice, mother, hilda
+alice, grandfather, sauros
+alice, race, human
+alice, sex, female
+alice, profession, swordsking
+alice, country, kingdom of asura
+alice, pet, linearna
+alice, teacher, gileine
+sylvie, sex, female
+sylvie, husband, rudeus
+sylvie, race, mixed
+sylvie, profession, magician
+sylvie, daughter, lucy
+sylvie, son, sieg
+sylvie, father, rawls
+sylvie, grandmother, erinarise
+sylvie, family name, greyrat
+sylvie, school, ranoa magic university
+sylvie, wife companion, alice
+sylvie, wife companion, roxie
+sylvie, country, kingdom of asura
+sylvie, birth place, fitia
+roxie, sex, female
+roxie, race, demon
+roxie, husband, rudeus
+roxie, wife companion, sylvie
+roxie, wife companion, alice
+roxie, profession, magician
+roxie, school, ranoa magic university
+roxie, daughter, lara
+roxie, daughter, lili
+roxie, father, loin
+roxie, mother, locarie
+roxie, organization, ranoa magic university
+roxie, birth place, demon continent
+paul, race, human
+paul, sex, male
+paul, profession, swordsman
+paul, wife, jennis
+paul, wife, lilia
+paul, son, rudeus
+paul, daughter, elsa
+paul, daughter, norinne
+paul, uncle, sauros
+paul, cousin, philip
+paul, cousin, james
+paul, brother, pyremon
+paul, family name, greyrat
+paul, organization, back wolf's fang
+paul, country, kingdom of asura
+jennis, race, human
+jennis, sex, female
+jennis, husband, paul
+jennis, organization, back wolf's fang
+jennis, sister, therese
+jennis, brother, edgar
+jennis, son, rudeus
+jennis, daughter, norinne
+jennis, father, carlyle
+jennis, mother, claire
+jennis, grandfather, rarukan
+jennis, grandmother, merudi
+jennis, profession, adventurer
+jennis, wife companion, lilia
+jennis, family name, greyrat
+jennis, country, milis holy country
+lilia, race, human
+lilia, sex, female
+lilia, husband, paul
+lilia, daughter, elsa
+lilia, family name, greyrat
+lilia, profession, babysitter
+lilia, country, kingdom of asura
+lilia, father, dojo
+lilia, wife companion, jennis
+ars, family name, greyrat
+ars, race, human
+ars, sex, male
+ars, father, rudeus
+ars, wife, elsa
+ars, mother, alice
+ars, brother, sieg
+ars, sister, lili
+ars, sister, christina
+ars, aunt, elsa
+ars, aunt, norinne
+ars, grandfather, paul
+ars, grandmother, jennis
+ars, daughter, ferris
+ars, country, magic kingdom of ranoa
+ars, school, asura royal school
+sieg, family name, greyrat
+sieg, race, mixed
+sieg, sex, male
+sieg, father, rudeus
+sieg, mother, sylvie
+sieg, country, magic kingdom of ranoa
+sieg, sister, lucy
+sieg, sister, lara
+sieg, brother, ars
+sieg, sister, lili
+sieg, sister, christina
+sieg, aunt, norinne
+sieg, aunt, elsa
+sieg, grandmother, jennis
+sieg, grandfather, paul
+sieg, profession, swordsman
+sieg, school, asura royal school
+lili, family name, greyrat
+lili, father, rudeus
+lili, mother, roxie
+lili, sister, lucy
+lili, sister, lara
+lili, brother, ars
+lili, brother, sieg
+lili, sister, christina
+lili, aunt, elsa
+lili, aunt, norinne
+lili, grandfather, paul
+lili, grandmother, jennis
+lili, race, mixed
+lili, profession, craftsman
+lili, country, magic kingdom of ranoa
+lili, sex, female
+lara, family name, greyrat
+lara, sex, female
+lara, country, magic kingdom of ranoa
+lara, mother, roxie
+lara, father, rudeus
+lara, sister, lili
+lara, sister, lucy
+lara, sister, christina
+lara, pet, leo
+lara, brother, ars
+lara, brother, sieg
+lara, profession, magician
+lara, school, ranoa magic university
+lara, aunt, norinne
+lara, aunt, elsa
+lara, grandfather, paul
+lara, grandmother, jennis
+lara, race, mixed
+christina, family name, greyrat
+christina, father, rudeus
+christina, mother, alice
+christina, sister, lucy
+christina, sister, lara
+christina, sister, lili
+christina, brother, ars
+christina, brother, sieg
+christina, grandfather, paul
+christina, grandmother, jennis
+christina, race, human
+christina, sex, female
+christina, country, magic kingdom of ranoa
+lucy, family name, greyrat
+lucy, father, rudeus
+lucy, mother, sylvie
+lucy, sister, christina
+lucy, sister, lara
+lucy, sister, lili
+lucy, brother, ars
+lucy, brother, sieg
+lucy, grandfather, paul
+lucy, grandmother, jennis
+lucy, race, human
+lucy, sex, female
+lucy, country, magic kingdom of ranoa
+ferris, family name, greyrat
+ferris, sex, female
+ferris, race, human
+ferris, father, ars
+ferris, mother, elsa
+olsted, sex, male
+olsted, race, balaur
+olsted, profession, ryujin
+olsted, organization, olsted inc.
+olsted, birth place, dragon world
+olsted, father, first ryujin
+ariel, country, kingdom of asura
+ariel, race, human
+ariel, sex, female
+ariel, profession, queen
+ariel, family name, asura
+ariel, school, ranoa magic university
+ariel, son, edward
+ariel, daughter, sariel
+ariel, brother, gravel
+ariel, brother, grannel
+luke, country, kingdom of asura
+luke, family name, notos greyrat
+luke, sex, male
+luke, race, human
+luke, school, ranoa magic university
+luke, profession, guardian
+luke, father, philemon
+luke, cousin, rudeus
+elinarise, sex, female
+elinarise, race, long ear
+elinarise, profession, adventurer
+elinarise, organization, back wolf's fang
+elinarise, son, rawls
+elinarise, grandson, sylvie
+elinarise, husband, cliff
+elinarise, son, clive
+elinarise, family name, dragonroad
+elinarise, school, ranoa magic university
+cliff, family name, grimol
+cliff, race, quarter
+cliff, sex, male
+cliff, son, clive
+cliff, school, ranoa magic university
+cliff, country, milis holy country
+cliff, profession, magician
+cliff, grandfather, harry
+zanoba, family name, sealawn
+zanoba, race, human
+zanoba, brother, pax
+zanoba, country, kingdom of sealawn
+zanoba, sex, male
+zanoba, school, ranoa magic university
+zanoba, profession, prince
+pax, family name, sealawn
+pax, race, human
+pax, brother, zanoba
+pax, country, kingdom of sealawn
+pax, sex, male
+pax, profession, king
+linearna, family name, dedordia
+linearna, race, beast
+linearna, sex, female
+linearna, profession, director
+linearna, organization, ludo mercenary
+linearna, father, guess
+linearna, grandfather, gustave
+linearna, aunt, gileine
+linearna, sister, minitona
+linearna, school, ranoa magic university
+linearna, birth place, large forest
+pursena, family name, adoldia
+pursena, sex, female
+pursena, organization, ludo mercenary
+pursena, sister, tercena
+pursena, school, ranoa magic university
+pursena, profession, director
+pursena, birth place, large forest
+pursena, race, beast
+gileine, family name, dedordia
+gileine, race, beast
+gileine, sex, female
+gileine, profession, swordsking
+gileine, organization, back wolf's fang
+gileine, student, alice
+gileine, father, gustave
+gileine, brother, guess
+gileine, birth place, large forest
+ruijerudo, wife, norinne
+ruijerudo, birth place, demon continent
+ruijerudo, family name, spelldia
+ruijerudo, daughter, ruisheria
+ruijerudo, race, demon
+ruijerudo, sex, male
+ruijerudo, profession, adventurer
+geese, sex, male
+geese, profession, adventurer
+geese, race, demon
+geese, birth place, demon continent
+geese, organization, back wolf's fang
+geese, family name, nukadia
+leo, sex, male
+leo, race, holy beast
+leo, birth place, large forest
+leo, master, lara
