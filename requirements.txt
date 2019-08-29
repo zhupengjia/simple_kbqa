@@ -2,8 +2,11 @@ tqdm
 numpy
 scipy
 spacy
-python-lzo
-fuzzywuzzy[speedup]
+h5py
+bidict
+flask
+nltk
+pytorch_transformers
 git+git@github.com:zhupengjia/KnowledgeGraphEmbedding.git
 git+git@github.com:zhupengjia/nlptools.git
 

@@ -15,10 +15,16 @@ graph search use pretrained graph embedding via rotatE model
         cd KnowledgeGraphEmbedding/codes
         ./run2.py --data_path=$DATA_PATH --model=RotatE --save_path=$SAVE_PATH --double_entity_embedding --cuda --hidden_dim=50
         ```
-
     - Run
         
         ```shell
         ./interact.py --checkpoint=$CHECKPOINTFILE --w2v_word2idx=$WORDEMBEDDINGLOOKUPFILE --w2v_idx2vec=$WORDEMBEDDINGWEIGHTFILE --backend restful
+        ```
+
+        word2vec lookup and weight file can be generated from script in example directory:
+
+        ```shell
+        cd example
+        ./bert_to_wordvec.py
         ```
 
