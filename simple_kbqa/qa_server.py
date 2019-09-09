@@ -38,7 +38,10 @@ class QAServer:
 
     def __call__(self, question, session_id=None):
         doc = self.tokenizer(question)
-        root = [token for token in doc if token.head == token][0]
+        root = [token for token in doc if token.head == token]
+        if len(root) < 1:
+            return self.fallback_reply, 0
+        root = root[0]
         entities = []
         def treeloop(node):
             for child in node.children:
