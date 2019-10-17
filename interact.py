@@ -2,7 +2,7 @@
 import argparse
 
 parser = argparse.ArgumentParser(description='Simple KBQA')
-parser.add_argument('-p', '--port', dest='port', default=5003, help="listen port, default is 5002")
+parser.add_argument('-p', '--port', dest='port', default=5000, help="listen port, default is 5002")
 parser.add_argument('--backend', dest='backend', default='shell', help="choose for backend from: shell, restful, default is shell")
 parser.add_argument('--checkpoint', dest='checkpoint', required=True, help="checkpoint file of pretrained knowledge graph embedding")
 parser.add_argument('--w2v_word2idx', dest='w2v_word2idx', required=True, help="word embedding idx mapping file")

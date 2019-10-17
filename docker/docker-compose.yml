@@ -11,6 +11,6 @@ services:
           - ../data:/opt/chatbot/data
       working_dir: /opt/chatbot
       environment:
-          BOT_CHECKPOINT:
-          W2V_WORD2IDX:
-          W2V_IDX2VEC:
+          BOT_CHECKPOINT: /opt/chatbot/data/kbqa/elsa/checkpoint
+          W2V_WORD2IDX: /opt/chatbot/data/word2vec/embedding.lookup
+          W2V_IDX2VEC: /opt/chatbot/data/word2vec/embedding.h5py

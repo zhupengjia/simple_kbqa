@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t elsa_chatbot:latest -f Dockerfile ../
+docker build -t simple_kbqa:latest -f Dockerfile ../
