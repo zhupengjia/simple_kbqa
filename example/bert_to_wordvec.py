@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import sys, os, torch, h5py
-from pytorch_transformers import BertModel, BertTokenizer
+from transformers import BertModel, BertTokenizer
 from nlptools.utils import zdump
 
 model_path = sys.argv[1] if len(sys.argv) > 1 else "."

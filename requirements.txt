@@ -6,7 +6,6 @@ h5py
 bidict
 flask
 nltk
-pytorch_transformers
-git+git@github.com:zhupengjia/KnowledgeGraphEmbedding.git
-git+git@github.com:zhupengjia/nlptools.git
+transformers
+git+https://github.com/zhupengjia/nlptools
 
